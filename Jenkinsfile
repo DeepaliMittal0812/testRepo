@@ -12,14 +12,12 @@ pipeline {
                 }
             }
         }*/
-            stage('Deploy') {
-                steps {
-                    echo 'Deploying....'
-                    withAnt {
-                        sh(script: 'ant -v deployCode', returnStdout: true)   
-                    }
-                }
+              stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+                bat label: '', script: 'ant deployCode'
             }
+        }
              /*  stage('Merging Branch') {
                 
                 steps {
