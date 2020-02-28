@@ -18,6 +18,7 @@ pipeline {
                 }
             }
         }*/
+<<<<<<< HEAD
             stage('Deploy') {
                 steps {
                     echo 'Deploying....'
@@ -25,7 +26,14 @@ pipeline {
                          bat label: '', script: 'ant -v deployCode'
                     
                 }
+=======
+              stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+                bat label: '', script: 'ant deployCode'
+>>>>>>> ad043d0186c81263f5900429a73c6d3e14be77d0
             }
+        }
              /*  stage('Merging Branch') {
                 
                 steps {
