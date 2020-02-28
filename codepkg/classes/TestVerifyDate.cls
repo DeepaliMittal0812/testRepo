@@ -1,4 +1,4 @@
-@isTest
+@isTest(seeallData =true)
 public class TestVerifyDate {
 
     @istest
@@ -9,7 +9,7 @@ public class TestVerifyDate {
       System.assertEquals(d,d1);
     }
   @istest
-    static void CheckDates2(){ 
+    static void checkDates2(){ 
         date d1=system.today().adddays(42);
              date dateField=system.today();
     Date lastDayOfMonth = dateField.addMonths(1).toStartofMonth().addDays(-1);

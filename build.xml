@@ -11,6 +11,9 @@
     <condition property="sf.password" value=""> <not> <isset property="sf.password"/> </not> </condition>
     <condition property="sf.sessionId" value=""> <not> <isset property="sf.sessionId"/> </not> </condition>
 
+ 
+
+
     <taskdef resource="com/salesforce/antlib.xml" uri="antlib:com.salesforce">
         <classpath>
             <pathelement location="../ant-salesforce.jar" />        	
@@ -113,4 +116,25 @@
     <target name="describeMetadata">
       <sf:describeMetadata username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}"/>
     </target>
+
+      <target name="pmd">
+        
+        <property name="pmd.dir" value="../" />
+        <path id="pmd.classpath">
+            <fileset dir="${pmd.dir}\lib"> 
+                <include name="*.jar" /> 
+            </fileset>
+        </path>
+
+        
+        <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" classpathref="pmd.classpath" />
+        <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" /> <!-- classpathref="pmd.classpath"/> -->
+        <pmd rulesetfiles="pmdRules.xml" failOnRuleViolation="yes" >
+            <formatter type="html" toFile="pmd_report.html" toConsole="true" />
+            <fileset dir="src/">
+                <include name="**/*.java"/>
+            </fileset>
+        </pmd>
+    </target>
+
 </project>

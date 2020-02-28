@@ -3,6 +3,12 @@ pipeline {
 
  agent any
     stages {
+        stage('PMD') {
+                steps {
+                    echo 'PMD....'
+                      bat label: '', script: 'ant PMD'
+                }
+            }
           /*stage('Validation') {
             steps {//
                 echo 'Validating..'
@@ -15,9 +21,9 @@ pipeline {
             stage('Deploy') {
                 steps {
                     echo 'Deploying....'
-                    withAnt {
-                        sh(script: 'ant -v deployCode', returnStdout: true)   
-                    }
+                   
+                         bat label: '', script: 'ant -v deployCode'
+                    
                 }
             }
              /*  stage('Merging Branch') {
