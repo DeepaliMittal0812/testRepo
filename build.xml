@@ -131,8 +131,8 @@
         <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" /> <!-- classpathref="pmd.classpath"/> -->
         <pmd rulesetfiles="pmdRules.xml" failOnRuleViolation="yes" >
             <formatter type="html" toFile="pmd_report.html" toConsole="true" />
-            <fileset dir="src/">
-                <include name="**/*.java"/>
+            <fileset dir="codepkg/">
+                <include name="**/*.cls"/>
             </fileset>
         </pmd>
     </target>
