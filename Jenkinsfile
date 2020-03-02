@@ -6,7 +6,7 @@ pipeline {
         stage('PMD') {
             steps {
                 echo 'PMD....'
-                    bat label: '', script: 'ant PMD'
+                    bat label: '', script: 'ant pmd'
             }
         }
         /*stage('Validation') {
