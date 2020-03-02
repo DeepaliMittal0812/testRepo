@@ -119,9 +119,9 @@
 
       <target name="pmd">
         
-        <property name="pmd.dir" value="../" />
+       
         <path id="pmd.classpath">
-            <fileset dir="${pmd.dir}\lib"> 
+            <fileset dir="../lib"> 
                 <include name="*.jar" /> 
             </fileset>
         </path>

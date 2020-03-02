@@ -17,4 +17,21 @@
 
      <rule ref="category/apex/bestpractices.xml/ApexUnitTestShouldNotUseSeeAllDataTrue" />
     <rule ref="category/apex/bestpractices.xml/ApexUnitTestClassShouldHaveAsserts" />
+
+<rule ref="category/apex/bestpractices.xml/ApexAssertionsShouldIncludeMessage">
+     <priority>3</priority>  
+    <description> 
+      Avoid creating deeply nested if-then statements  
+      </description> 
+  
+</rule>
+
+    
+<rule ref="category/apex/codestyle.xml/LocalVariableNamingConventions">
+    <properties>
+        <property name="finalLocalPattern" value="[a-z][a-zA-Z0-9]*" />
+        <property name="localPattern" value="[a-z][a-zA-Z0-9]*" />
+    </properties>
+</rule>
+ 
 </ruleset> 
