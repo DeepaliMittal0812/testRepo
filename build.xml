@@ -132,7 +132,7 @@
         <pmd rulesetfiles="pmdRules.xml" failOnRuleViolation="yes" >
             <formatter type="html" toFile="pmd_report.html" toConsole="true" />
             <fileset dir="codepkg/">
-                <include name="**/*.cls"/>
+                <include name="**/*.cls\"/>
             </fileset>
         </pmd>
     </target>
