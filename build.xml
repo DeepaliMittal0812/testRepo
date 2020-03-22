@@ -398,7 +398,7 @@
 		</if>
     </target>
 
-	<target name="builderWithGitDiff" depends="diffBuilderWithGitCommit,deploy">
+	<target name="builderWithGitDiff" depends="diffBuilderWithGitCommit,deployProd">
 		
     </target>
 	
