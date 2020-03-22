@@ -6,7 +6,7 @@ pipeline {
         stage('PMD') {
             steps {
                 echo 'PMD....'
-                    bat label: '', script: 'ant pmd'
+                    //bat label: '', script: 'ant pmd'
             }
         }
         /*stage('Validation') {
@@ -21,7 +21,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                bat label: '', script: 'ant deployCode'
+                bat label: '', script: 'ant -v builderWithGitDiff'
 
             }
         }
