@@ -4,6 +4,7 @@ public class AccountTriggerHandler {
         
         for(account a : acc){
             if(a.ShippingState != a.BillingState){
+                system.debug('hello;');
               a.ShippingState = a.BillingState;
             }
         }
