@@ -1,7 +1,7 @@
 public class ContactSearch {
-    public static list<Contact> searchForContacts(String lName,String postalcode){
-        contact[] con=[select contact.id,name,lastname,firstname from contact where lastname=:lname and MailingPostalCode=:postalcode];
-        system.debug('www' +con);
-        return con;
+    public static List<Contact> searchForContacts(String ln, String postal){
+        List<Contact> cts = [Select LastName FROM Contact Where LastName= '' AND MailingPostalCode= :postal];
+            return cts;
     }
+
 }

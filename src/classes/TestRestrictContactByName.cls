@@ -1,17 +1,23 @@
 @isTest
-public class TestRestrictContactByName {
-
-    @isTest static void testcontactName(){
-        contact cnt = new Contact(lastname='INVALIDNAME');
-        insert cnt;
+private class TestRestrictContactByName {
+    @isTest static void contact_operation(){
+        list<contact> con_list =new list<contact>();
+        contact con= new contact(firstname='Damini',lastname ='INVALIDNAME');
+        con_list.add(con); 
+        contact con1= new contact(firstname='Damini',lastname ='NAME');
+        con_list.add(con1);    
         
-        test.starttest();
-        Database.SaveResult result = Database.insert(cnt, false);
-        test.stopTest();
+        Test.startTest();
+        Database.SaveResult[] con_insert = Database.insert(con_list, false);
+        Test.stopTest();
+        database.SaveResult r0 = con_insert[0];
+        database.SaveResult r1 = con_insert[1];
         
-         System.assert(!result.isSuccess());
-        System.assert(result.getErrors().size() > 0);
-        System.assertEquals('The Last Name "'+cnt.LastName+'" is not allowed for DML.',
-                             result.getErrors()[0].getMessage());
+        System.assert(!r0.isSuccess());
+        System.assert(r1.isSuccess());
+        
+        
+        
+        
     }
 }

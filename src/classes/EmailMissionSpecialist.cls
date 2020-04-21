@@ -1,5 +1,5 @@
 public class EmailMissionSpecialist {
- // Public method
+   // Public method
    public void sendMail(String address, String subject, String body) {
       // Create an email message object
       Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
@@ -9,13 +9,11 @@ public class EmailMissionSpecialist {
       mail.setPlainTextBody(body);
       // Pass this email message to the built-in sendEmail method 
       // of the Messaging class
-   
-       Messaging.SendEmailResult[] results = Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });
-      
+      Messaging.SendEmailResult[] results = Messaging.sendEmail(
+                                new Messaging.SingleEmailMessage[] { mail });
       // Call a helper method to inspect the returned results
       inspectResults(results);
    }
-
    // Helper method
    private static Boolean inspectResults(Messaging.SendEmailResult[] results) {
       Boolean sendResult = true;
@@ -34,5 +32,4 @@ public class EmailMissionSpecialist {
       }
       return sendResult;
    }
-
 }

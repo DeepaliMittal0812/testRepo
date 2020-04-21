@@ -1,25 +1,17 @@
-@isTest   
+@isTest
 public class AccountTriggerTest {
-
-@isTest static void TestCreate200Records(){
-    
-        
-  List<Account> accts = new List<Account>();
-        for(Integer i=0; i < 200; i++) {
-            Account acct = new Account(Name='Test Account ' + i, BillingState = 'CA');
-            accts.add(acct);
-        
-
+    @istest
+    public static void insertacc(){
+        list<account> acc = new list<account>();
+        for(Integer i= 0;i<200;i++){
+            acc.add(new account(name='acc'+i , BillingState ='CA'));
         }
-           insert accts;	
-            
-            for (Account a:accts){
-                
-                System.assertEquals('CA', 'CA', 'ERROR');
-            
-          
+        test.startTest();
+      list<account> acc_list =  AccountTriggerHandler.CreateAccounts(acc);
+        for(account acc1: acc_list){
+             System.assertEquals('CA', acc1.ShippingState);  
+        }
+     
+        test.stopTest();
     }
-
-}
-   
 }

@@ -1,12 +1,13 @@
 public class AccountTriggerHandler {
-
-    public static void CreateAccounts(List<Account> acc){
-        
-        for(account a : acc){
-            if(a.ShippingState != a.BillingState){
-                system.debug('hello;');
-              a.ShippingState = a.BillingState;
-            }
+    public static list<account> CreateAccounts(list<account> acc_list){
+        list<account> account_list= new list<account>();
+        for(account acc :acc_list){
+            acc.ShippingState = acc.BillingState;
+              account_list.add(acc); 
+             system.debug(acc.BillingState + 'shipping' +acc.ShippingState);
         }
+       
+        return account_list;
+        
     }
 }

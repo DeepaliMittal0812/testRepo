@@ -1,9 +1,10 @@
 public class ContactAndLeadSearch {
-
-    public static List<List<SObject>> searchContactsAndLeads(String searchname){
-        
-        List<List< SObject>> alist=[find :searchname in name fields returning lead(FirstName,LastName), contact(FirstName,LastName) ];
-        
-        return alist;
+    public static List<List< SObject>> searchContactsAndLeads(String lastname)
+    {
+      List<List< SObject>> search = [Find :lastname IN NAME Fields Returning contact(Name),Lead(firstName)];  
+          System.debug(search);
+        return search;
+      
     }
+
 }

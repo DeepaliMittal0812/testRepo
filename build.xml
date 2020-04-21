@@ -132,7 +132,7 @@
         <taskdef name="pmd" classname="net.sourceforge.pmd.ant.PMDTask" /> <!-- classpathref="pmd.classpath"/> -->
         <pmd rulesetfiles="pmdRules.xml" failOnRuleViolation="yes" >
             <formatter type="html" toFile="pmd_report.html" toConsole="true" />
-            <fileset dir="codepkg/">
+            <fileset dir="deploy-sf/">
                 <include name="**/*.cls\"/>
             </fileset>
         </pmd>
