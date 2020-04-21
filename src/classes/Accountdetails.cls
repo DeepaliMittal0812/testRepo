@@ -3,6 +3,6 @@ public class Accountdetails {
         public Accountdetails(ApexPages.StandardController stdCtrl){
             
             bool=false;
-			system.debug('abc');
+			system.debug('ab1231');
         }
 }
