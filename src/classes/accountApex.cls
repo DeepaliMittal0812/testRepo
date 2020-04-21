@@ -1,7 +1,7 @@
 public class accountApex {
     @AuraEnabled
     public static List <sObject> fetchLookUpValues(String searchKeyWord) {
-        
+        system.debug(123);
         String searchKey = searchKeyWord + '%';  
         String sQuery =  'select Id, Name,Phone from account where Name LIKE: searchKey order by createdDate DESC limit 50';
         List <sObject> returnList = Database.query(sQuery);
