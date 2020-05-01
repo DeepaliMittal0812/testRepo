@@ -5,7 +5,9 @@ public class accountApex {
         String searchKey = searchKeyWord + '%';  
         String sQuery =  'select Id, Name,Phone from account where Name LIKE: searchKey order by createdDate DESC limit 50';
         List <sObject> returnList = Database.query(sQuery);
+		system.debug('wert');
         return returnList;
+		
     }
     @AuraEnabled
     public static List<Contact> fetchrecord(sobject objname){
