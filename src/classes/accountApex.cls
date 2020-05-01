@@ -13,7 +13,8 @@ public class accountApex {
     public static List<Contact> fetchrecord(sobject objname){
         ID recordid= objname.Id;
         Account acc= [select id, (Select ID, FirstName, LastName, Phone, Email from Contacts) from  account where ID =: recordid];    
-        list<contact> con =acc.Contacts;System.debug(con);
+        list<contact> con =acc.Contacts;
+		System.debug(con+'wdefv');
         return con;
     }
     @AuraEnabled
