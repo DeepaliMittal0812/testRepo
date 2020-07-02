@@ -1,4 +1,0 @@
-<aura:component >
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
-    <c:Trialinitchild/>
-</aura:component>
